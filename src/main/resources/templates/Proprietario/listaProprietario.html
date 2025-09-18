@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.thymealef.org">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Lista de Alunos</title>
+</head>
+
+<body>
+    <h1>Lista de Proprietários</h1>
+    <h3><a href="/proprietarios/criar" class="btn btn-primary">+ Novo Proprietário</a></h3>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th>Categoria</th>
+            <th colspan="2">Ações</th>
+        </tr>
+
+        <tr th:each="proprietario : ${proprietarios}">
+            <td th:text="${proprietario.idProprietario}">*</td>
+            <td th:text="${proprietario.nomeProprietario}">*</td>
+            <td th:text="${proprietario.cpfProprietario}">*</td>
+            <td th:text="${proprietario.rgProprietario}">*</td>
+            <td th:text="${proprietario.categoriaProprietario}">*</td>
+            <td>
+                <a th:href="@{/proprietarios/editar/{id}(id=${proprietario.idProprietario})}" 
+                   class="btn btn-primary">Editar</a>
+            </td>
+            <td>
+                <a th:href="@{/proprietarios/excluir/{id}(id=${proprietario.idProprietario})}" 
+                   class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+
+</html> 

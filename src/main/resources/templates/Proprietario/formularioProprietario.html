@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cadastro de proprietario</title>
+</head>
+<body  class="form-page">
+    <h1>Cadastrar Proprietário</h1>
+
+    <form th:action="@{/proprietarios/salvar}" method="POST" th:object="${proprietario}">
+        <label for="idProprietario">ID Proprietário:</label>
+        <input type="text" name="idProprietario" th:field="*{idProprietario}" readonly>
+
+        <label for="nomeProprietario">Nome Proprietário:</label>
+        <input type="text" name="nomeProprietario" th:field="*{nomeProprietario}">
+
+        <label for="cpfProprietario">CPF Proprietário:</label>
+        <input type="text" name="cpfProprietario" th:field="*{cpfProprietario}">
+
+        <label for="rgProprietario">RG Proprietário:</label>
+        <input type="text" name="rgProprietario" th:field="*{rgProprietario}">
+
+        <label for="categoriaProprietario">Categoria Proprietário:</label>
+        <input type="text" name="categoriaProprietario" th:field="*{categoriaProprietario}">
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</body>
+
+</html>
